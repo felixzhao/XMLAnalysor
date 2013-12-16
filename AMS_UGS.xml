@@ -1,0 +1,1983 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Site siteName="partner-portal" ruleEngine="DYNAMIC">
+    <rules ruleName="RULE_GPP_6DOT5_TEST" ruleID="partnerportal-lar_RULE_GPP_6DOT5_TEST">
+        <group groupName="GPP_6DOT5_TEST" groupID="partnerportal-lar_GPP_6DOT5_TEST"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="HPInternalUser"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_BIG_DEALS" ruleID="partner-portal_RULE_BIG_DEALS">
+        <group groupName="BIG_DEALS" groupID="partner-portal_BIG_DEALS"/>
+        <expression>
+            <Equals attributeValue="LOCAL_SECURITY_BIGDEAL_SPECPRICING" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CANADA_PARTNER-PORTAL_USERS" ruleID="partner-portal_RULE_CANADA_PARTNER-PORTAL_USERS">
+        <group groupName="CANADA_PARTNER-PORTAL_USERS" groupID="partner-portal_CANADA_PARTNER-PORTAL_USERS"/>
+        <expression>
+            <Equals attributeValue="CA" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_CSRA" ruleID="partner-portal_RULE_US_CSRA">
+        <group groupName="US_CSRA" groupID="partner-portal_US_CSRA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Profiler NA 2957 P" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 2957 B" attribute="Programs"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_COMMERCIAL" ruleID="partner-portal_RULE_CA_COMMERCIAL">
+        <group groupName="CA_COMMERCIAL" groupID="partner-portal_CA_COMMERCIAL"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROMOENGINE_US" ruleID="partner-portal_RULE_PROMOENGINE_US">
+        <group groupName="PROMOENGINE_US" groupID="partner-portal_PROMOENGINE_US"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4913 Attribute" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4914 Attribute" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CANADA_PARTNER-PORTAL_USERS_NOT_CONSUMER" ruleID="partner-portal_RULE_CANADA_PARTNER-PORTAL_USERS_NOT_CONSUMER">
+        <group groupName="CANADA_PARTNER-PORTAL_USERS_NOT_CONSUMER" groupID="partner-portal_CANADA_PARTNER-PORTAL_USERS_NOT_CONSUMER"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_PARTNER_PORTAL_ADMIN" ruleID="partner-portal_RULE_US_PARTNER_PORTAL_ADMIN">
+        <group groupName="US_PARTNER_PORTAL_ADMIN" groupID="partner-portal_US_PARTNER_PORTAL_ADMIN"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_SOLUTION_DISTRIBUTOR" ruleID="partner-portal_RULE_US_SOLUTION_DISTRIBUTOR">
+        <group groupName="US_SOLUTION_DISTRIBUTOR" groupID="partner-portal_US_SOLUTION_DISTRIBUTOR"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Solution Partner" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_DISTRIBUTOR" ruleID="partner-portal_RULE_US_DISTRIBUTOR">
+        <group groupName="US_DISTRIBUTOR" groupID="partner-portal_US_DISTRIBUTOR"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_FINBEN" ruleID="partner-portal_RULE_US_FINBEN">
+        <group groupName="US_FINBEN" groupID="partner-portal_US_FINBEN"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="Financial Benefits - US" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CLT_NA_DISTRIBUTOR" ruleID="partner-portal_RULE_CLT_NA_DISTRIBUTOR">
+        <group groupName="CLT_NA_DISTRIBUTOR" groupID="partner-portal_CLT_NA_DISTRIBUTOR"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                </Or>
+                <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+                <Not>
+                    <Equals attributeValue="Profiler NA 5466 Y" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CLT_EXTERNAL_NOT DISTRIBUTOR" ruleID="partner-portal_RULE_CLT_EXTERNAL_NOT DISTRIBUTOR">
+        <group groupName="CLT_EXTERNAL_NOT DISTRIBUTOR" groupID="partner-portal_CLT_EXTERNAL_NOT DISTRIBUTOR"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </Or>
+                <Or>
+                    <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                    <Equals attributeValue="MANAGE_TRAINING_OF_EMPLOYEES_BACKUP" attribute="UserRights"/>
+                    <Equals attributeValue="MANAGE_TRAINING_OF_EMPLOYEES" attribute="UserRights"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Profiler NA 5466 Y" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_COMMERCIAL_PPA" ruleID="partner-portal_RULE_COMMERCIAL_PPA">
+        <group groupName="COMMERCIAL_PPA" groupID="partner-portal_COMMERCIAL_PPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CAN_DGF_PROGRAM" ruleID="partner-portal_RULE_CAN_DGF_PROGRAM">
+        <group groupName="CAN_DGF_PROGRAM" groupID="partner-portal_CAN_DGF_PROGRAM"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="HP Partner Portal BP Mgr User" attribute="ResponsibilityNames"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_DIST_ENTER_CA" ruleID="partner-portal_RULE_DIST_ENTER_CA">
+        <group groupName="DIST_ENTER_CA" groupID="partner-portal_DIST_ENTER_CA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CONSUMER_AND_COMMERCIAL_PPA" ruleID="partner-portal_RULE_CONSUMER_AND_COMMERCIAL_PPA">
+        <group groupName="CONSUMER_AND_COMMERCIAL_PPA" groupID="partner-portal_CONSUMER_AND_COMMERCIAL_PPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CONSUMER_AND_COMMERCIAL_USERS" ruleID="partner-portal_RULE_CONSUMER_AND_COMMERCIAL_USERS">
+        <group groupName="CONSUMER_AND_COMMERCIAL_USERS" groupID="partner-portal_CONSUMER_AND_COMMERCIAL_USERS"/>
+        <expression>
+            <And>
+                <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_BIZ_PLANNING" ruleID="partner-portal_RULE_BIZ_PLANNING">
+        <group groupName="BIZ_PLANNING" groupID="partner-portal_BIZ_PLANNING"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="HP Partner Portal BP User" attribute="ResponsibilityNames"/>
+                    <Equals attributeValue="HP Partner Portal BP Mgr User" attribute="ResponsibilityNames"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4916" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-5350" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4914" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4913" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4915" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4917" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_BIZ_PLANNING_CA" ruleID="partner-portal_RULE_BIZ_PLANNING_CA">
+        <group groupName="BIZ_PLANNING_CA" groupID="partner-portal_BIZ_PLANNING_CA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="HP Partner Portal BP Mgr User" attribute="ResponsibilityNames"/>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4916" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-5350" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4914" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4913" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4915" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4917" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_HP_INTERNAL_USERS" ruleID="partner-portal_RULE_HP_INTERNAL_USERS">
+        <group groupName="HP_INTERNAL_USERS" groupID="partner-portal_HP_INTERNAL_USERS"/>
+        <expression>
+            <And>
+                <Equals attributeValue="americas" attribute="SiteIdentifier"/>
+                <Equals attributeValue="T" attribute="HPInternalUser"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_USERRIGHT_SMARTQUOTE" ruleID="partner-portal_RULE_US_USERRIGHT_SMARTQUOTE">
+        <group groupName="US_USERRIGHT_SMARTQUOTE" groupID="partner-portal_US_USERRIGHT_SMARTQUOTE"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="LOCAL_SECURITY_SmartQuote" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SCE_SMARTQUOTE_INTEGRATION_NA" ruleID="partner-portal_RULE_SCE_SMARTQUOTE_INTEGRATION_NA">
+        <group groupName="SCE_SMARTQUOTE_INTEGRATION_NA" groupID="partner-portal_SCE_SMARTQUOTE_INTEGRATION_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="LOCAL_SECURITY_SmartQuote" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_P1_US_ELITE" ruleID="partner-portal_RULE_P1_US_ELITE">
+        <group groupName="P1_US_ELITE" groupID="partner-portal_P1_US_ELITE"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Profiler NA 5501 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5310 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5331 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5328 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5499 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5V1" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5ZE" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS60E" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS62H" attribute="Programs"/>
+                    <Equals attributeValue="3-4IIBMX OPS" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L1" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L2" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L3" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L4" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5503 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-9WIF69" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQBJ" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQCM" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXBGH" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQ8F" attribute="Programs"/>
+                    <Equals attributeValue="3-9WIEKQ" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5185 K-12 Ed" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5186 H-Ed" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5187 State/Local" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5188 Federal" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXB9Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5507 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQBY" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5311 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXB9K - SI L4" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5VP" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UEK" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL - L1" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL - L2" attribute="Programs"/>
+                    <Equals attributeValue="3-K4QQP3" attribute="Programs"/>
+                    <Equals attributeValue="3-COMSVC_L5" attribute="Programs"/>
+                    <Equals attributeValue="3-COMSVC_L2" attribute="Programs"/>
+                    <Equals attributeValue="3-COMSVC_L6" attribute="Programs"/>
+                    <Equals attributeValue="3-4IIBMX_L2" attribute="Programs"/>
+                    <Equals attributeValue="3-4IIBMX_L3" attribute="Programs"/>
+                    <Equals attributeValue="3-J7H50G" attribute="Programs"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER-PORTAL_ALLUSERS" ruleID="partner-portal_RULE_PARTNER-PORTAL_ALLUSERS">
+        <group groupName="PARTNER-PORTAL_ALLUSERS" groupID="partner-portal_PARTNER-PORTAL_ALLUSERS"/>
+        <expression>
+            <Equals attributeValue="americas" attribute="SiteIdentifier"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_TYPE_COMMERCIAL_ENTERPRISE" ruleID="partner-portal_RULE_PARTNER_TYPE_COMMERCIAL_ENTERPRISE">
+        <group groupName="PARTNER_TYPE_COMMERCIAL_ENTERPRISE" groupID="partner-portal_PARTNER_TYPE_COMMERCIAL_ENTERPRISE"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_TYPE_COMMERCIAL_DISTRIBUTOR" ruleID="partner-portal_RULE_PARTNER_TYPE_COMMERCIAL_DISTRIBUTOR">
+        <group groupName="PARTNER_TYPE_COMMERCIAL_DISTRIBUTOR" groupID="partner-portal_PARTNER_TYPE_COMMERCIAL_DISTRIBUTOR"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_COMM_ENTER_SERVICE" ruleID="partner-portal_RULE_COMM_ENTER_SERVICE">
+        <group groupName="COMM_ENTER_SERVICE" groupID="partner-portal_COMM_ENTER_SERVICE"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                <Equals attributeValue="Service Partner" attribute="PartnerTypes"/>
+                <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_TYPE_CONSUMER" ruleID="partner-portal_RULE_PARTNER_TYPE_CONSUMER">
+        <group groupName="PARTNER_TYPE_CONSUMER" groupID="partner-portal_PARTNER_TYPE_CONSUMER"/>
+        <expression>
+            <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROFILE_3P_SEARCH" ruleID="partner-portal_RULE_PROFILE_3P_SEARCH">
+        <group groupName="PROFILE_3P_SEARCH" groupID="partner-portal_PROFILE_3P_SEARCH"/>
+        <expression>
+            <Equals attributeValue="1" attribute="Status"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROFILE_FILTERED_SIMULATION" ruleID="partner-portal_RULE_PROFILE_FILTERED_SIMULATION">
+        <group groupName="PROFILE_FILTERED_SIMULATION" groupID="partner-portal_PROFILE_FILTERED_SIMULATION"/>
+        <expression>
+            <And>
+                <Equals attributeValue="NA-GPP-INT-FILTER" attribute="Programs"/>
+                <Equals attributeValue="LOCAL_SECURITY_Simulation" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROFILE_GPC_SEARCH" ruleID="partner-portal_RULE_PROFILE_GPC_SEARCH">
+        <group groupName="PROFILE_GPC_SEARCH" groupID="partner-portal_PROFILE_GPC_SEARCH"/>
+        <expression>
+            <Equals attributeValue="1" attribute="Status"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SEC_CHECK_STATUS" ruleID="partner-portal_RULE_SEC_CHECK_STATUS">
+        <group groupName="SEC_CHECK_STATUS" groupID="partner-portal_SEC_CHECK_STATUS"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="Authorized" attribute="ApplicationStage"/>
+                    <Equals attributeValue="Unmanaged" attribute="ApplicationStage"/>
+                </Or>
+                <Or>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SEC_CHECK_STATUS_NOT_OEM" ruleID="partner-portal_RULE_SEC_CHECK_STATUS_NOT_OEM">
+        <group groupName="SEC_CHECK_STATUS_NOT_OEM" groupID="partner-portal_SEC_CHECK_STATUS_NOT_OEM"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="Authorized" attribute="ApplicationStage"/>
+                    <Equals attributeValue="Unmanaged" attribute="ApplicationStage"/>
+                </Or>
+                <Or>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </Or>
+                <Not>
+                    <InGroup value="partner-portal_OEM_USER"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SEC_CHECK_NOT_LEARNING" ruleID="partner-portal_RULE_SEC_CHECK_NOT_LEARNING">
+        <group groupName="SEC_CHECK_NOT_LEARNING" groupID="partner-portal_SEC_CHECK_NOT_LEARNING"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="Authorized" attribute="ApplicationStage"/>
+                    <Equals attributeValue="Unmanaged" attribute="ApplicationStage"/>
+                </Or>
+                <Or>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+                <Not>
+                    <InGroup value="partner-portal_OEM_USER"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_UNAUTHORIZED_PART_CHECK" ruleID="partner-portal_RULE_UNAUTHORIZED_PART_CHECK">
+        <group groupName="UNAUTHORIZED_PART_CHECK" groupID="partner-portal_UNAUTHORIZED_PART_CHECK"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="De-Authorized" attribute="ApplicationStage"/>
+                <Equals attributeValue="Merged" attribute="ApplicationStage"/>
+                <Equals attributeValue="Out of Business" attribute="ApplicationStage"/>
+                <Equals attributeValue="Rejected" attribute="ApplicationStage"/>
+                <Equals attributeValue="Terminated" attribute="ApplicationStage"/>
+                <Equals attributeValue="Under Review" attribute="ApplicationStage"/>
+                <Equals attributeValue="Pending" attribute="ApplicationStage"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROFILE_SIMULATION" ruleID="partner-portal_RULE_PROFILE_SIMULATION">
+        <group groupName="PROFILE_SIMULATION" groupID="partner-portal_PROFILE_SIMULATION"/>
+        <expression>
+            <And>
+                <Equals attributeValue="Profiler NA 5466 Y" attribute="Programs"/>
+                <Equals attributeValue="LOCAL_SECURITY_Simulation" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROFILE_SPP_SEARCH" ruleID="partner-portal_RULE_PROFILE_SPP_SEARCH">
+        <group groupName="PROFILE_SPP_SEARCH" groupID="partner-portal_PROFILE_SPP_SEARCH"/>
+        <expression>
+            <Equals attributeValue="1" attribute="Status"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_RESPONSIBILITY_PPA_COMMERCIAL_ENTERPRISE" ruleID="partner-portal_RULE_RESPONSIBILITY_PPA_COMMERCIAL_ENTERPRISE">
+        <group groupName="RESPONSIBILITY_PPA_COMMERCIAL_ENTERPRISE" groupID="partner-portal_RESPONSIBILITY_PPA_COMMERCIAL_ENTERPRISE"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_RESPONSIBILITY_PPA_CONSUMER" ruleID="partner-portal_RULE_RESPONSIBILITY_PPA_CONSUMER">
+        <group groupName="RESPONSIBILITY_PPA_CONSUMER" groupID="partner-portal_RESPONSIBILITY_PPA_CONSUMER"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                <Or>
+                    <Not>
+                        <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    </Not>
+                    <Not>
+                        <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                    </Not>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_COMMERCIAL_ENTERPRISE_USERS" ruleID="partner-portal_RULE_US_COMMERCIAL_ENTERPRISE_USERS">
+        <group groupName="US_COMMERCIAL_ENTERPRISE_USERS" groupID="partner-portal_US_COMMERCIAL_ENTERPRISE_USERS"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_COMMERCIAL_ENTERPRISE_USERS" ruleID="partner-portal_RULE_CA_COMMERCIAL_ENTERPRISE_USERS">
+        <group groupName="CA_COMMERCIAL_ENTERPRISE_USERS" groupID="partner-portal_CA_COMMERCIAL_ENTERPRISE_USERS"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_COMMERCIAL_CONSUMER" ruleID="partner-portal_RULE_US_COMMERCIAL_CONSUMER">
+        <group groupName="US_COMMERCIAL_CONSUMER" groupID="partner-portal_US_COMMERCIAL_CONSUMER"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_COMMERCIAL_CONSUMER" ruleID="partner-portal_RULE_CA_COMMERCIAL_CONSUMER">
+        <group groupName="CA_COMMERCIAL_CONSUMER" groupID="partner-portal_CA_COMMERCIAL_CONSUMER"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_PARTNER-PORTAL_USERS_NOT_LEARNING" ruleID="partner-portal_RULE_US_PARTNER-PORTAL_USERS_NOT_LEARNING">
+        <group groupName="US_PARTNER-PORTAL_USERS_NOT_LEARNING" groupID="partner-portal_US_PARTNER-PORTAL_USERS_NOT_LEARNING"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_PARTNER-PORTAL_USERS_NOT_LEARNING" ruleID="partner-portal_RULE_CA_PARTNER-PORTAL_USERS_NOT_LEARNING">
+        <group groupName="CA_PARTNER-PORTAL_USERS_NOT_LEARNING" groupID="partner-portal_CA_PARTNER-PORTAL_USERS_NOT_LEARNING"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_PARTNER-PORTAL_USERS" ruleID="partner-portal_RULE_US_PARTNER-PORTAL_USERS">
+        <group groupName="US_PARTNER-PORTAL_USERS" groupID="partner-portal_US_PARTNER-PORTAL_USERS"/>
+        <expression>
+            <Equals attributeValue="US" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_PARTNER-PORTAL_USERS_NOT_CONSUMER" ruleID="partner-portal_RULE_US_PARTNER-PORTAL_USERS_NOT_CONSUMER">
+        <group groupName="US_PARTNER-PORTAL_USERS_NOT_CONSUMER" groupID="partner-portal_US_PARTNER-PORTAL_USERS_NOT_CONSUMER"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_MANAGER_NA" ruleID="partner-portal_RULE_PART_EDUC_MANAGER_NA">
+        <group groupName="PART_EDUC_MANAGER_NA" groupID="partner-portal_PART_EDUC_MANAGER_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="PARTNER_EDUCATION_ADMINISTRATOR" attribute="UserRights"/>
+                <Or>
+                    <Equals attributeValue="MANAGE_TRAINING_OF_EMPLOYEES" attribute="UserRights"/>
+                    <Equals attributeValue="MANAGE_TRAINING_OF_EMPLOYEES_BACKUP" attribute="UserRights"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_SETUP_IN_PROCESS_NA" ruleID="partner-portal_RULE_PART_EDUC_SETUP_IN_PROCESS_NA">
+        <group groupName="PART_EDUC_SETUP_IN_PROCESS_NA" groupID="partner-portal_PART_EDUC_SETUP_IN_PROCESS_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="PARTNER_EDUCATION_ACCESS_REQUESTED" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="PARTNER_EDUCATION_TC_RENEWAL_REQUIRED" attribute="UserRights"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="PARTNER_EDUCATION_ACCESS_GRANTED" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_SETUP_REQUIRED_NA" ruleID="partner-portal_RULE_PART_EDUC_SETUP_REQUIRED_NA">
+        <group groupName="PART_EDUC_SETUP_REQUIRED_NA" groupID="partner-portal_PART_EDUC_SETUP_REQUIRED_NA"/>
+        <expression>
+            <And>
+                <Not>
+                    <Equals attributeValue="PARTNER_EDUCATION_ACCESS_GRANTED" attribute="UserRights"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="PARTNER_EDUCATION_ACCESS_REQUESTED" attribute="UserRights"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="PARTNER_EDUCATION_TC_RENEWAL_REQUIRED" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_TC_RENEWAL_REQUIRED_NA" ruleID="partner-portal_RULE_PART_EDUC_TC_RENEWAL_REQUIRED_NA">
+        <group groupName="PART_EDUC_TC_RENEWAL_REQUIRED_NA" groupID="partner-portal_PART_EDUC_TC_RENEWAL_REQUIRED_NA"/>
+        <expression>
+            <Equals attributeValue="PARTNER_EDUCATION_TC_RENEWAL_REQUIRED" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NA_VIGNETTE_EDITORS" ruleID="partner-portal_RULE_NA_VIGNETTE_EDITORS">
+        <group groupName="NA_VIGNETTE_EDITORS" groupID="partner-portal_NA_VIGNETTE_EDITORS"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="triptikona.devi@hp.com" attribute="Email"/>
+                <Equals attributeValue="adhokshaja.s.r@hp.com" attribute="Email"/>
+                <Equals attributeValue="lathashree.a@hp.com" attribute="Email"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_GENERIC_PARTNER_PORTAL_ADMIN" ruleID="partner-portal_RULE_GENERIC_PARTNER_PORTAL_ADMIN">
+        <group groupName="GENERIC_PARTNER_PORTAL_ADMIN" groupID="partner-portal_GENERIC_PARTNER_PORTAL_ADMIN"/>
+        <expression>
+            <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_ACCESS_ENABLED_NA" ruleID="partner-portal_RULE_PART_EDUC_ACCESS_ENABLED_NA">
+        <group groupName="PART_EDUC_ACCESS_ENABLED_NA" groupID="partner-portal_PART_EDUC_ACCESS_ENABLED_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="PARTNER_EDUCATION_ACCESS_GRANTED" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="PARTNER_EDUCATION_TC_RENEWAL_REQUIRED" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NOT_COMMERCIAL_OR_ENTERPRISE" ruleID="partner-portal_RULE_NOT_COMMERCIAL_OR_ENTERPRISE">
+        <group groupName="NOT_COMMERCIAL_OR_ENTERPRISE" groupID="partner-portal_NOT_COMMERCIAL_OR_ENTERPRISE"/>
+        <expression>
+            <Not>
+                <Or>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                </Or>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_P1_NA_ELITE_AND_INSIGNIA" ruleID="partner-portal_RULE_P1_NA_ELITE_AND_INSIGNIA">
+        <group groupName="P1_NA_ELITE_AND_INSIGNIA" groupID="partner-portal_P1_NA_ELITE_AND_INSIGNIA"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="Profiler NA 5501 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5310 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5331 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5328 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5499 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5V1" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5SF" attribute="Programs"/>
+                    <Equals attributeValue="3-4IIBMX OPS" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L1" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L2" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L3" attribute="Programs"/>
+                    <Equals attributeValue="3-A13F8Q L4" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5503 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-9WIF69" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQBJ" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQCM" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXBGH" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQ8F" attribute="Programs"/>
+                    <Equals attributeValue="3-9WIEKQ" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5185 K-12 Ed" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5186 H-Ed" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5187 State/Local" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5188 Federal" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L1" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L2" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L3" attribute="Programs"/>
+                    <Equals attributeValue="3-4ODZYM" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5147 B" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5147 Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L1" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L2" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L3" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L4" attribute="Programs"/>
+                    <Equals attributeValue="3-CG4BZT" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXB9Y" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5507 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQBY" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5311 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXB9K - SI L4" attribute="Programs"/>
+                    <Equals attributeValue="3-6ODESF" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL - L1" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL - L2" attribute="Programs"/>
+                    <Equals attributeValue="3-DY0YZ9" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5VP" attribute="Programs"/>
+                    <Equals attributeValue="3-DY6CUQ" attribute="Programs"/>
+                    <InGroup value="partner-portal_P1_NA_ELITE_AND_INSIGNIA_EXTEND"/>
+                </Or>
+                <Equals attributeValue="Insignia" attribute="Programs"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NOT_INSIGNIA" ruleID="partner-portal_RULE_NOT_INSIGNIA">
+        <group groupName="NOT_INSIGNIA" groupID="partner-portal_NOT_INSIGNIA"/>
+        <expression>
+            <Not>
+                <Equals attributeValue="Insignia" attribute="Programs"/>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_INSIGNIA" ruleID="partner-portal_RULE_INSIGNIA">
+        <group groupName="INSIGNIA" groupID="partner-portal_INSIGNIA"/>
+        <expression>
+            <Equals attributeValue="Insignia" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_GALAXY_PPA" ruleID="partner-portal_RULE_PARTNER_GALAXY_PPA">
+        <group groupName="PARTNER_GALAXY_PPA" groupID="partner-portal_PARTNER_GALAXY_PPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Or>
+                    <Equals attributeValue="P1" attribute="AgreementTypes"/>
+                    <Equals attributeValue="BA" attribute="AgreementTypes"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_NOT_GALAXY_PPA" ruleID="partner-portal_RULE_PARTNER_NOT_GALAXY_PPA">
+        <group groupName="PARTNER_NOT_GALAXY_PPA" groupID="partner-portal_PARTNER_NOT_GALAXY_PPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Not>
+                    <Or>
+                        <Equals attributeValue="P1" attribute="AgreementTypes"/>
+                        <Equals attributeValue="BA" attribute="AgreementTypes"/>
+                    </Or>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_GALAXY_NOT_PPA" ruleID="partner-portal_RULE_PARTNER_GALAXY_NOT_PPA">
+        <group groupName="PARTNER_GALAXY_NOT_PPA" groupID="partner-portal_PARTNER_GALAXY_NOT_PPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="F" attribute="IsPartnerAdmin"/>
+                <Or>
+                    <Equals attributeValue="P1" attribute="AgreementTypes"/>
+                    <Equals attributeValue="BA" attribute="AgreementTypes"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_NOT_GALAXY_NOT_PPA" ruleID="partner-portal_RULE_PARTNER_NOT_GALAXY_NOT_PPA">
+        <group groupName="PARTNER_NOT_GALAXY_NOT_PPA" groupID="partner-portal_PARTNER_NOT_GALAXY_NOT_PPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="F" attribute="IsPartnerAdmin"/>
+                <Not>
+                    <Or>
+                        <Equals attributeValue="P1" attribute="AgreementTypes"/>
+                        <Equals attributeValue="BA" attribute="AgreementTypes"/>
+                    </Or>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PRO_CURVE_USERS" ruleID="partner-portal_RULE_PRO_CURVE_USERS">
+        <group groupName="PRO_CURVE_USERS" groupID="partner-portal_PRO_CURVE_USERS"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="3-DP3UEK" attribute="Programs"/>
+                <Equals attributeValue="3-4LS5VP" attribute="Programs"/>
+                <Equals attributeValue="3-BY0YZ9" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_USERRIGHT_SMARTQUOTE" ruleID="partner-portal_RULE_USERRIGHT_SMARTQUOTE">
+        <group groupName="USERRIGHT_SMARTQUOTE" groupID="partner-portal_USERRIGHT_SMARTQUOTE"/>
+        <expression>
+            <Equals attributeValue="LOCAL_SECURITY_SmartQuote" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_USERRIGHT_SMARTQUOTE_INTERNAL" ruleID="partner-portal_RULE_USERRIGHT_SMARTQUOTE_INTERNAL">
+        <group groupName="USERRIGHT_SMARTQUOTE_INTERNAL" groupID="partner-portal_USERRIGHT_SMARTQUOTE_INTERNAL"/>
+        <expression>
+            <Equals attributeValue="LOCAL_SECURITY_SMARTQUOTE_INTERNAL_USER" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_USERRIGHT_SMARTQUOTE_INTERNAL_US" ruleID="partner-portal_RULE_USERRIGHT_SMARTQUOTE_INTERNAL_US">
+        <group groupName="USERRIGHT_SMARTQUOTE_INTERNAL_US" groupID="partner-portal_USERRIGHT_SMARTQUOTE_INTERNAL_US"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="LOCAL_SECURITY_SMARTQUOTE_INTERNAL_USER" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_USERRIGHT_SMARTQUOTE_INTERNAL_CA" ruleID="partner-portal_RULE_USERRIGHT_SMARTQUOTE_INTERNAL_CA">
+        <group groupName="USERRIGHT_SMARTQUOTE_INTERNAL_CA" groupID="partner-portal_USERRIGHT_SMARTQUOTE_INTERNAL_CA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="LOCAL_SECURITY_SMARTQUOTE_INTERNAL_USER" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_NOT_LEARNING_PARTNER_NA" ruleID="partner-portal_RULE_PART_EDUC_NOT_LEARNING_PARTNER_NA">
+        <group groupName="PART_EDUC_NOT_LEARNING_PARTNER_NA" groupID="partner-portal_PART_EDUC_NOT_LEARNING_PARTNER_NA"/>
+        <expression>
+            <And>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+                <Equals attributeValue="PARTNER_EDUCATION_ACCESS_GRANTED" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_ONLY_LEARNING_PARTNER_NA" ruleID="partner-portal_RULE_PART_EDUC_ONLY_LEARNING_PARTNER_NA">
+        <group groupName="PART_EDUC_ONLY_LEARNING_PARTNER_NA" groupID="partner-portal_PART_EDUC_ONLY_LEARNING_PARTNER_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                <Equals attributeValue="PARTNER_EDUCATION_ACCESS_GRANTED" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PART_EDUC_SUBK_PARTNER_NA" ruleID="partner-portal_RULE_PART_EDUC_SUBK_PARTNER_NA">
+        <group groupName="PART_EDUC_SUBK_PARTNER_NA" groupID="partner-portal_PART_EDUC_SUBK_PARTNER_NA"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="G_SUBK_IPG" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_IPG_LASERJET" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_IPG_EDGELINE" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_IPG_DESIGNJET" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_IPG_DESIGNJET_SLVNT" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_IPG_DESIGNJET_NON_SLVNT" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_PSG" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_PSG_COMM_NOTEBOOK" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_PSG_COMM_DESKTOP_WKSTN" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_ISS" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_BCS" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_BCS_INTEGRITY" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_BCS_HP9000" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_BCS_ALPHA" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_NETWORK" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_COMMERCIAL" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_COMM_NAS" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_COMM_NEARLINE" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_COMM_SAN" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_ENTERPRISE" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_ENT_NEARLINE" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_ENT_SAN" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_ENT_ARRAYS_EVA" attribute="Programs"/>
+                <Equals attributeValue="G_SUBK_SWD_ENT_ARRAYS_XP" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_EDUCATION_ELITE_PARTNERS_NA" ruleID="partner-portal_RULE_EDUCATION_ELITE_PARTNERS_NA">
+        <group groupName="EDUCATION_ELITE_PARTNERS_NA" groupID="partner-portal_EDUCATION_ELITE_PARTNERS_NA"/>
+        <expression>
+            <Equals attributeValue="3-4ODZYM" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_DEAL_REGISTRATION" ruleID="partner-portal_RULE_US_DEAL_REGISTRATION">
+        <group groupName="US_DEAL_REGISTRATION" groupID="partner-portal_US_DEAL_REGISTRATION"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+                <Or>
+                    <Equals attributeValue="3-4LS5SF" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXBCF" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXBBY" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXBB8" attribute="Programs"/>
+                    <Equals attributeValue="3-4KXB9Y" attribute="Programs"/>
+                    <Equals attributeValue="3-CFQX5P" attribute="Programs"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PRICING_VIEWER_PARTNER" ruleID="partner-portal_RULE_PRICING_VIEWER_PARTNER">
+        <group groupName="PRICING_VIEWER_PARTNER" groupID="partner-portal_PRICING_VIEWER_PARTNER"/>
+        <expression>
+            <Not>
+                <Or>
+                    <Equals attributeValue="Profiler NA 5466 Y" attribute="Programs"/>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Or>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OSS" ruleID="partner-portal_RULE_OSS">
+        <group groupName="OSS" groupID="partner-portal_OSS"/>
+        <expression>
+            <Equals attributeValue="HP Partner Portal Mgmt - NA" attribute="ResponsibilityNames"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_MARKETING_SUBSIDY_CENTER" ruleID="partner-portal_RULE_MARKETING_SUBSIDY_CENTER">
+        <group groupName="MARKETING_SUBSIDY_CENTER" groupID="partner-portal_MARKETING_SUBSIDY_CENTER"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="3-4KXBB8" attribute="Programs"/>
+                <Equals attributeValue="3-4KXBBY" attribute="Programs"/>
+                <Equals attributeValue="3-4KXBCF" attribute="Programs"/>
+                <Equals attributeValue="3-4LS5SF" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 3843 Y" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5558 Y" attribute="Programs"/>
+                <Equals attributeValue="3-4KXB9K - SI L4" attribute="Programs"/>
+                <Equals attributeValue="3-4KXB9K - SI L3" attribute="Programs"/>
+                <Equals attributeValue="3-4KXB9K - SI L2" attribute="Programs"/>
+            </Or>
+            <Not>
+                <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_BENEFIT_STATEMENT" ruleID="partner-portal_RULE_US_BENEFIT_STATEMENT">
+        <group groupName="US_BENEFIT_STATEMENT" groupID="partner-portal_US_BENEFIT_STATEMENT"/>
+        <expression>
+            <Equals attributeValue="Benefit Statement - US" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CANADA_BENEFIT_STATEMENT" ruleID="partner-portal_RULE_CANADA_BENEFIT_STATEMENT">
+        <group groupName="CANADA_BENEFIT_STATEMENT" groupID="partner-portal_CANADA_BENEFIT_STATEMENT"/>
+        <expression>
+            <Equals attributeValue="Benefit Statement - Canada" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_REMOTE_SUPPORT_NA" ruleID="partner-portal_RULE_REMOTE_SUPPORT_NA">
+        <group groupName="REMOTE_SUPPORT_NA" groupID="partner-portal_REMOTE_SUPPORT_NA"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="G_REMOTE_ACCESS_SUPPORT" attribute="Programs"/>
+                <Equals attributeValue="3-2S1-77" attribute="PartnerProId"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_P1_CA_ELITE" ruleID="partner-portal_RULE_P1_CA_ELITE">
+        <group groupName="P1_CA_ELITE" groupID="partner-portal_P1_CA_ELITE"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="3-CG4BZT" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L3" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L4" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L1" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L2" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5147 B" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5147 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L2" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L3" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L1" attribute="Programs"/>
+                    <Equals attributeValue="3-4VJNKG - L0" attribute="Programs"/>
+                    <Equals attributeValue="3-6ODESF" attribute="Programs"/>
+                    <Equals attributeValue="3-5S988T" attribute="Programs"/>
+                    <Equals attributeValue="3-5S9873" attribute="Programs"/>
+                    <Equals attributeValue="3-AL52R - RS1" attribute="Programs"/>
+                    <Equals attributeValue="3-AL52R - RS2" attribute="Programs"/>
+                    <Equals attributeValue="3-DY0YZ9" attribute="Programs"/>
+                    <Equals attributeValue="3-DY6CUQ" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL - L1" attribute="Programs"/>
+                    <Equals attributeValue="3-DP3UDL - L2" attribute="Programs"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_P1_CA_SPECIALIST" ruleID="partner-portal_RULE_P1_CA_SPECIALIST">
+        <group groupName="P1_CA_SPECIALIST" groupID="partner-portal_P1_CA_SPECIALIST"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="Profiler NA 5237" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L3" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L4" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L1" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5237 L2" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 5147 Y" attribute="Programs"/>
+                    <Equals attributeValue="3-DY0YZ9" attribute="Programs"/>
+                    <Equals attributeValue="3-CG4BZT" attribute="Programs"/>
+                    <Equals attributeValue="3-CG4BZD" attribute="Programs"/>
+                    <Equals attributeValue="3-6ODESF" attribute="Programs"/>
+                    <Equals attributeValue="3-5S988T" attribute="Programs"/>
+                    <Equals attributeValue="3-4LSQBY" attribute="Programs"/>
+                    <Equals attributeValue="3-4LS5VP" attribute="Programs"/>
+                    <Equals attributeValue="3-2SQ0FF" attribute="Programs"/>
+                    <Equals attributeValue="3-2OLS29" attribute="Programs"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NEW_CONT_RENEWAL" ruleID="partner-portal_RULE_NEW_CONT_RENEWAL">
+        <group groupName="NEW_CONT_RENEWAL" groupID="partner-portal_NEW_CONT_RENEWAL"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Equals attributeValue="Officer" attribute="HPRole"/>
+                <Equals attributeValue="Headquarters" attribute="HierarchyType"/>
+                <Equals attributeValue="Authorized" attribute="ApplicationStage"/>
+                <Equals attributeValue="3-NA-Return" attribute="Programs"/>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CONTRACTS_ADDENDA" ruleID="partner-portal_RULE_CONTRACTS_ADDENDA">
+        <group groupName="CONTRACTS_ADDENDA" groupID="partner-portal_CONTRACTS_ADDENDA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Equals attributeValue="Officer" attribute="HPRole"/>
+                <Equals attributeValue="Headquarters" attribute="HierarchyType"/>
+                <Not>
+                    <Equals attributeValue="3-D3GNPC" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_REMOTE_SUPPORT_NA" ruleID="partnerportal-RULE_REMOTE_SUPPORT_NA">
+        <group groupName="REMOTE_SUPPORT_NA" groupID="partnerportal-REMOTE_SUPPORT_NA"/>
+        <expression>
+            <Equals attributeValue="G_REMOTE_ACCESS_SUPPORT" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PSNMSO_CA" ruleID="partner-portal_RULE_PSNMSO_CA">
+        <group groupName="PSNMSO_CA" groupID="partner-portal_PSNMSO_CA"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="3-4ODZYA" attribute="Programs"/>
+                <Equals attributeValue="3-4S4ONN" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 4003 Participant" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5032 Participant" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5033 Participant" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5242 L1" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5242 L2" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5243 Y" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5214 Y" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5215 Y" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_MARKETING_SUBSIDY_CENTER_CA" ruleID="partner-portal_RULE_MARKETING_SUBSIDY_CENTER_CA">
+        <group groupName="MARKETING_SUBSIDY_CENTER_CA" groupID="partner-portal_MARKETING_SUBSIDY_CENTER_CA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="3-4WADEU - L0" attribute="Programs"/>
+                    <Equals attributeValue="3-4WADEU - L1" attribute="Programs"/>
+                    <Equals attributeValue="3-4WADEU - L2" attribute="Programs"/>
+                    <Equals attributeValue="3-4WADEU - L3" attribute="Programs"/>
+                    <Equals attributeValue="3-4WADEU - L4" attribute="Programs"/>
+                    <Equals attributeValue="3-4WADEU - L5" attribute="Programs"/>
+                    <Equals attributeValue="3-4WADEU - L6" attribute="Programs"/>
+                    <Equals attributeValue="3-6ODESF" attribute="Programs"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SMBCENTRAL_SIMPLE_US" ruleID="partner-portal_RULE_SMBCENTRAL_SIMPLE_US">
+        <group groupName="SMBCENTRAL_SIMPLE_US" groupID="partner-portal_SMBCENTRAL_SIMPLE_US"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="3-MS8P8" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SMBCENTRAL_SECURE_US" ruleID="partner-portal_RULE_SMBCENTRAL_SECURE_US">
+        <group groupName="SMBCENTRAL_SECURE_US" groupID="partner-portal_SMBCENTRAL_SECURE_US"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                </Or>
+                <Equals attributeValue="3-MS8P8" attribute="Programs"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SPECIAL_PRICING_TOOLS_UR" ruleID="partner-portal_RULE_SPECIAL_PRICING_TOOLS_UR">
+        <group groupName="SPECIAL_PRICING_TOOLS_UR" groupID="partner-portal_SPECIAL_PRICING_TOOLS_UR"/>
+        <expression>
+            <Equals attributeValue="NA Restricted Special Pricing Access" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SPECIAL_PRICING_TOOLS_PR" ruleID="partner-portal_RULE_SPECIAL_PRICING_TOOLS_PR">
+        <group groupName="SPECIAL_PRICING_TOOLS_PR" groupID="partner-portal_SPECIAL_PRICING_TOOLS_PR"/>
+        <expression>
+            <Equals attributeValue="3-9XT2SJ" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SPECIAL_PRICING_SPIF Cent_PR_UR" ruleID="partner-portal_RULE_SPECIAL_PRICING_SPIF Cent_PR_UR">
+        <group groupName="SPECIAL_PRICING_SPIF Cent_PR_UR" groupID="partner-portal_SPECIAL_PRICING_SPIF Cent_PR_UR"/>
+        <expression>
+            <And>
+                <Equals attributeValue="Profiler NA 4747 Y" attribute="Programs"/>
+                <Equals attributeValue="NA Restricted Special Pricing Access" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_SPECIAL_PRICING_SPIF Depot_PR_UR" ruleID="partner-portal_RULE_SPECIAL_PRICING_SPIF Depot_PR_UR">
+        <group groupName="SPECIAL_PRICING_SPIF Depot_PR_UR" groupID="partner-portal_SPECIAL_PRICING_SPIF Depot_PR_UR"/>
+        <expression>
+            <And>
+                <Equals attributeValue="Profiler NA 5443 Y" attribute="Programs"/>
+                <Equals attributeValue="NA Restricted Special Pricing Access" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_PARTNER_PORTAL_USERS-CDW" ruleID="partner-portal_RULE_US_PARTNER_PORTAL_USERS-CDW">
+        <group groupName="US_PARTNER_PORTAL_USERS-CDW" groupID="partner-portal_US_PARTNER_PORTAL_USERS-CDW"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="3-9XT2SJ" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_PORTAL_USERS-CDW" ruleID="partner-portal_RULE_PARTNER_PORTAL_USERS-CDW">
+        <group groupName="PARTNER_PORTAL_USERS-CDW" groupID="partner-portal_PARTNER_PORTAL_USERS-CDW"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="3-9XT2SJ" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_TYPE_COMMERCIAL_ENTERPRISE-CDW" ruleID="partner-portal_RULE_PARTNER_TYPE_COMMERCIAL_ENTERPRISE-CDW">
+        <group groupName="PARTNER_TYPE_COMMERCIAL_ENTERPRISE-CDW" groupID="partner-portal_PARTNER_TYPE_COMMERCIAL_ENTERPRISE-CDW"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="3-9XT2SJ" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_TECHZONE" ruleID="partner-portal_RULE_TECHZONE">
+        <group groupName="TECHZONE" groupID="partner-portal_TECHZONE"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="Profiler NA 3422 Y" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 4566 P" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5549 Y" attribute="Programs"/>
+                <Equals attributeValue="3-4H3FBV" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 1446 C" attribute="Programs"/>
+                <Equals attributeValue="3-913XXS" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 5466 Y" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 4825 Participant" attribute="Programs"/>
+                <Equals attributeValue="Profiler NA 4826 Participant" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PRICING_NDP_LIST" ruleID="partner-portal_PRICING_NDP_LIST">
+        <group groupName="PRICING_NDP_LIST" groupID="partner-PRICING_NDP_LIST"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="HP Partner Portal Mgmt - NA" attribute="ResponsibilityNames"/>
+                <Or>
+                    <Equals attributeValue="P1" attribute="AgreementTypes"/>
+                    <Equals attributeValue="VPAHC" attribute="AgreementTypes"/>
+                    <Equals attributeValue="PATSY-P1" attribute="AgreementTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CAN_COMMERCIAL_DISTRIBUTORS" ruleID="partner-portal_CAN_COMMERCIAL_DISTRIBUTORS">
+        <group groupName="CAN_COMMERCIAL_DISTRIBUTORS" groupID="partner-CAN_COMMERCIAL_DISTRIBUTORS"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="PATSY-RB" attribute="AgreementTypes"/>
+                    <Equals attributeValue="Profiler NA 5466 Y" attribute="Programs"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NO_SEARCH" ruleID="partner-portal_RULE_NO_SEARCH">
+        <group groupName="NO_SEARCH" groupID="partner-portal_NO_SEARCH"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                <InGroup value="partner-portal_OEM_USER"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_GLOBAL_PCOMM_TEST_NA" ruleID="partner-portal_RULE_GLOBAL_PCOMM_TEST_NA">
+        <group groupName="GLOBAL_PCOMM_TEST_NA" groupID="partner-portal_GLOBAL_PCOMM_TEST_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_PC_pComm" attribute="Programs"/>
+                <Or>
+                    <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                    <Equals attributeValue="G_pComm_User" attribute="UserRights"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_GLOBAL_SQ_TEST_NA" ruleID="partner-portal_RULE_GLOBAL_SQ_TEST_NA">
+        <group groupName="GLOBAL_SQ_TEST_NA" groupID="partner-portal_GLOBAL_SQ_TEST_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_PC_SQ" attribute="Programs"/>
+                <Or>
+                    <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                    <Equals attributeValue="G_SmartQuote_User" attribute="UserRights"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_USER" ruleID="partner-portal_RULE_OEM_USER">
+        <group groupName="OEM_USER" groupID="partner-portal_OEM_USER"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="G_OEM_ONLY" attribute="Programs"/>
+                <InGroup value="partner-portal_OEM_DOUBLE"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_USER2" ruleID="partner-portal_RULE_OEM_USER2">
+        <group groupName="OEM_USER2" groupID="partner-portal_OEM_USER2"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="G_OEM_ONLY" attribute="Programs"/>
+                <InGroup value="partner-portal_OEM_DOUBLE"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_DOUBLE" ruleID="partner-portal_RULE_OEM_DOUBLE">
+        <group groupName="OEM_DOUBLE" groupID="partner-portal_OEM_DOUBLE"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_Double_Hatted_Partner" attribute="Programs"/>
+                <Equals attributeValue="G_OEM_User" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CHANNEL_AND_OEM" ruleID="partner-portal_RULE_CHANNEL_AND_OEM">
+        <group groupName="CHANNEL_AND_OEM" groupID="partner-portal_CHANNEL_AND_OEM"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="Authorized" attribute="ApplicationStage"/>
+                    <Equals attributeValue="Unmanaged" attribute="ApplicationStage"/>
+                </Or>
+                <Or>
+                    <Equals attributeValue="CA" attribute="CountryCode"/>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </Or>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_ODP_DISTRI" ruleID="partner-portal_RULE_OEM_ODP_DISTRI">
+        <group groupName="OEM_ODP_DISTRI" groupID="partner-portal_OEM_ODP_DISTRI"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_OEM_ODP" attribute="Programs"/>
+                <InGroup value="partner-portal_OEM_USER"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_ODP_T1_RES" ruleID="partner-portal_RULE_OEM_ODP_T1_RES">
+        <group groupName="OEM_ODP_T1_RES" groupID="partner-portal_OEM_ODP_T1_RES"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_OEM_OEM_T1" attribute="Programs"/>
+                <InGroup value="partner-portal_OEM_USER"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_ODP_T2_RES" ruleID="partner-portal_RULE_OEM_ODP_T2_RES">
+        <group groupName="OEM_ODP_T2_RES" groupID="partner-portal_OEM_ODP_T2_RES"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_OEM_OEM_T2" attribute="Programs"/>
+                <InGroup value="partner-portal_OEM_USER"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_DISTRIBUTOR_STATEMENT" ruleID="partner-portal_RULE_CA_DISTRIBUTOR_STATEMENT">
+        <group groupName="CA_DISTRIBUTOR_STATEMENT" groupID="partner-portal_CA_DISTRIBUTOR_STATEMENT"/>
+        <expression>
+            <And>
+                <Equals attributeValue="3-CFQX5P" attribute="Programs"/>
+                <Equals attributeValue="Benefit Statement - Canada" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_TIER_1_US" ruleID="partner-portal_RULE_TIER_1_US">
+        <group groupName="TIER_1_US" groupID="partner-portal_TIER_1_US"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Or>
+                    <Equals attributeValue="G_Tgt_Commercial_T1_Dist" attribute="PartnerSubTypes"/>
+                    <Equals attributeValue="G_Tgt_Commercial_T1_Reseller" attribute="PartnerSubTypes"/>
+                    <Equals attributeValue="G_Tgt_Commercial_T1_Dist_S" attribute="PartnerSubTypes"/>
+                    <Equals attributeValue="G_Tgt_Commercial_T1_Reseller_S" attribute="PartnerSubTypes"/>
+                    <Equals attributeValue="G_Tgt_Consumer_T1_S" attribute="PartnerSubTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_USR_IRSRPT_NA" ruleID="partner-portal_RULE_USR_IRSRPT_NA">
+        <group groupName="USR_IRSRPT_NA" groupID="partner-portal_USR_IRSRPT_NA"/>
+        <expression>
+            <InGroup value="partner-portal_REMOTE_SUPPORT_NA"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_REMOTE_SUPPORT_REPORTS_NA" ruleID="partner-portal_REPORTS_NA">
+        <group groupName="REMOTE_SUPPORT_REPORTS_NA" groupID="partner-portal_REPORTS_NA"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+                <Equals attributeValue="LOCAL_SECURITY_IRS_Support_Configuration_Reports" attribute="UserRights"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_NOT_OEM_LEARNING" ruleID="partner-portal_RULE_US_NOT_OEM_LEARNING">
+        <group groupName="US_NOT_OEM_LEARNING" groupID="partner-portal_US_NOT_OEM_LEARNING"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Not>
+                    <InGroup value="partner-portal_OEM_USER"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Learning Partner" attribute="PartnerTypes"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_BLUE_CARPET" ruleID="partner-portal_RULE_US_BLUE_CARPET">
+        <group groupName="US_BLUE_CARPET" groupID="partner-portal_US_BLUE_CARPET"/>
+        <expression>
+            <Or>
+                <And>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Not>
+                        <Equals attributeValue="3-HZQBAI" attribute="Programs"/>
+                    </Not>
+                </And>
+                <And>
+                    <Equals attributeValue="3-HZQBAI" attribute="Programs"/>
+                    <Equals attributeValue="Blue Carpet administration Program" attribute="UserRights"/>
+                </And>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_MDF_RESOURCES_CA" ruleID="partner-portal_RULE_MDF_RESOURCES_CA">
+        <group groupName="MDF_RESOURCES_CA" groupID="partner-portal_MDF_RESOURCES_CA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4916" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-5350" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4914" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4913" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4915" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4917" attribute="Programs"/>
+                </Not>
+                <Or>
+                    <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Enterprise" attribute="PartnerTypes"/>
+                    <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_MDF_RESOURCES_US" ruleID="partner-portal_RULE_MDF_RESOURCES_US">
+        <group groupName="MDF_RESOURCES_US" groupID="partner-portal_MDF_RESOURCES_US"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4916" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-5350" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4914" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4913" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4915" attribute="Programs"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="Profiler NA 1493-4917" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_SOLUTION" ruleID="partner-portal_RULE_CA_SOLUTION">
+        <group groupName="CA_SOLUTION" groupID="partner-portal_CA_SOLUTION"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="Solution Partner" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_PartnerONE_Leads_Program_NA" ruleID="partner-portal_RULE_G_HP_PartnerONE_Leads_Program_NA">
+        <group groupName="G_HP_PartnerONE_Leads_Program_NA" groupID="partner-portal_G_HP_PartnerONE_Leads_Program_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Prospect" attribute="Programs"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_MPS_Portal_NA" ruleID="partner-portal_RULE_MPS_Portal_NA">
+        <group groupName="MPS_Portal_NA" groupID="partner-portal_MPS_Portal_NA"/>
+        <expression>
+            <Equals attributeValue="3-4IIBMX OPS" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PROFILE_ORACLE_NA" ruleID="partner-portal_RULE_PROFILE_ORACLE_NA">
+        <group groupName="PROFILE_ORACLE_NA" groupID="partner-portal_PROFILE_ORACLE_NA"/>
+        <expression>
+            <Equals attributeValue="G_BLOCK_ORACLE" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_ZERO_LEVEL_NA" ruleID="partner-portal_RULE_ZERO_LEVEL_NA">
+        <group groupName="ZERO_LEVEL_NA" groupID="partner-portal_ZERO_LEVEL_NA"/>
+        <expression>
+            <Not>
+                <InGroup value="partner-portal_PROFILE_ORACLE_NA"/>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_P1_My_Leads_NA" ruleID="partner-portal_RULE_G_HP_P1_My_Leads_NA">
+        <group groupName="G_HP_P1_My_Leads_NA" groupID="partner-portal_G_HP_P1_My_Leads_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Or>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                </Or>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_P1_Leads_Program_Enrolled_NA" ruleID="partner-portal_RULE_G_HP_P1_Leads_Program_Enrolled_NA">
+        <group groupName="G_HP_P1_Leads_Program_Enrolled_NA" groupID="partner-portal_G_HP_P1_Leads_Program_Enrolled_NA"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="T" attribute="HPInternalUser"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_WW_BU_PPS" ruleID="partner-portal_RULE_WW_BU_PPS">
+        <group groupName="WW_BU_PPS" groupID="partner-portal_WW_BU_PPS"/>
+        <expression>
+            <Equals attributeValue="US" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_WW_BU_ESSN" ruleID="partner-portal_RULE_WW_BU_ESSN">
+        <group groupName="WW_BU_ESSN" groupID="partner-portal_WW_BU_ESSN"/>
+        <expression>
+            <Equals attributeValue="US" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_WW_BU_ISS" ruleID="partner-portal_RULE_WW_BU_ISS">
+        <group groupName="WW_BU_ISS" groupID="partner-portal_WW_BU_ISS"/>
+        <expression>
+            <Equals attributeValue="US" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_WW_BU_ES" ruleID="partner-portal_RULE_WW_BU_ES">
+        <group groupName="WW_BU_ES" groupID="partner-portal_WW_BU_ES"/>
+        <expression>
+            <Equals attributeValue="US" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_WW_BU_TS" ruleID="partner-portal_RULE_WW_BU_TS">
+        <group groupName="WW_BU_TS" groupID="partner-portal_WW_BU_TS"/>
+        <expression>
+            <Equals attributeValue="US" attribute="CountryCode"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_GSD_USER_ONLY" ruleID="partner-portal_RULE_GSD_USER_ONLY">
+        <group groupName="GSD_USER_ONLY" groupID="partner-portal_GSD_USER_ONLY"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L1" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L2" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L3" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L4" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L5" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L6" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L7" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_GRA_GOLD_L8" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_DV_GOLD" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_DV_GOLD_L1" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_DV_GOLD_L2" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_DV_GOLD_L3" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_DV_GOLD_L4" attribute="Programs"/>
+                <Equals attributeValue="G_SPEC_P1_DV_GOLD_L5" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NMSO_ISS_COMMSTOR" ruleID="partner-portal_RULE_NMSO_ISS_COMMSTOR">
+        <group groupName="NMSO_ISS_COMMSTOR" groupID="partner-portal_NMSO_ISS_COMMSTOR"/>
+        <expression>
+            <Equals attributeValue="3-IW7Y4F" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_NMSO_PPS_PC" ruleID="partner-portal_RULE_NMSO_PPS_PC">
+        <group groupName="NMSO_PPS_PC" groupID="partner-portal_NMSO_PPS_PC"/>
+        <expression>
+            <Equals attributeValue="3-IW7Y61" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_OEM_INVITE_ONLY_PROG" ruleID="partner-portal_RULE_CA_OEM_INVITE_ONLY_PROG">
+        <group groupName="CA_OEM_INVITE_ONLY_PROG" groupID="partner-portal_CA_OEM_INVITE_ONLY_PROG"/>
+        <expression>
+            <And>
+                <Or>
+                    <Equals attributeValue="G_Double_Hatted_Partner" attribute="Programs"/>
+                    <Equals attributeValue="G_OEM_ONLY" attribute="Programs"/>
+                    <Equals attributeValue="G_OEM_OEM_T2" attribute="Programs"/>
+                </Or>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="T" attribute="IsPartnerAdmin"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_P1_NA_ELITE_AND_INSIGNIA_EXTEND" ruleID="partner-portal_RULE_P1_NA_ELITE_AND_INSIGNIA_EXTEND">
+        <group groupName="P1_NA_ELITE_AND_INSIGNIA_EXTEND" groupID="partner-portal_P1_NA_ELITE_AND_INSIGNIA_EXTEND"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="3-411BMX" attribute="Programs"/>
+                <Equals attributeValue="3-2OLS29" attribute="Programs"/>
+                <Equals attributeValue="3-J7H50G" attribute="Programs"/>
+                <Equals attributeValue="3-DP3UEK" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_OEM_Integrator" ruleID="partner-portal_RULE_OEM_Integrator">
+        <group groupName="OEM_Integrator" groupID="partner-portal_OEM_Integrator"/>
+        <expression>
+            <Or>
+                <And>
+                    <Equals attributeValue="3-US-OEMINT" attribute="Programs"/>
+                    <Equals attributeValue="US" attribute="CountryCode"/>
+                </And>
+                <InGroup value="partner-portal_HP_INTERNAL_USERS"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Program_Prospect_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Program_Prospect_NA">
+        <group groupName="G_HP_New_P1_Leads_Program_Prospect_NA" groupID="partner-portal_G_HP_New_P1_Leads_Program_Prospect_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Prospect" attribute="Programs"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Prospect" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Program_Enrolled_Assign_PPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Program_Enrolled_Assign_PPA_NA">
+        <group groupName="G_HP_New_P1_Leads_Program_Enrolled_Assign_PPA_NA" groupID="partner-portal_G_HP_New_P1_Leads_Program_Enrolled_Assign_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Not>
+                    <Or>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin_Training" attribute="UserRights"/>
+                    </Or>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Program_Enrolled_NonPPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Program_Enrolled_NonPPA_NA">
+        <group groupName="G_HP_New_P1_Leads_Program_Enrolled_NonPPA_NA" groupID="partner-portal_G_HP_New_P1_Leads_Program_Enrolled_NonPPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Not>
+                    <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                </Not>
+                <Not>
+                    <InGroup value="partner-portal_G_HP_New_P1_Leads_Program_Enrolled_Assign_PPA_NA"/>
+                </Not>
+                <Not>
+                    <Or>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                        <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin_Training" attribute="UserRights"/>
+                    </Or>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Program_Enrolled_Training_NonPPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Program_Enrolled_Training_NonPPA_NA">
+        <group groupName="G_HP_New_P1_Leads_Program_Enrolled_Training_NonPPA_NA" groupID="partner-portal_G_HP_New_P1_Leads_Program_Enrolled_Training_NonPPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_My_Leads_Access_NonPPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_My_Leads_Access_NonPPA_NA">
+        <group groupName="G_HP_New_P1_My_Leads_Access_NonPPA_NA" groupID="partner-portal_G_HP_New_P1_My_Leads_Access_NonPPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Program_Enrolled_Training_PPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Program_Enrolled_Training_PPA_NA">
+        <group groupName="G_HP_New_P1_Leads_Program_Enrolled_Training_PPA_NA" groupID="partner-portal_G_HP_New_P1_Leads_Program_Enrolled_Training_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_PORTAL-CDW-ONLY" ruleID="partner-portal_RULE_PARTNER_PORTAL-CDW-ONLY">
+        <group groupName="PARTNER_PORTAL-CDW-ONLY" groupID="partner-portal_PARTNER_PORTAL-CDW-ONLY"/>
+        <expression>
+            <Equals attributeValue="3-9XT2SJ" attribute="Programs"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_COMMERCIAL" ruleID="partner-portal_RULE_US_COMMERCIAL">
+        <group groupName="US_COMMERCIAL" groupID="partner-portal_US_COMMERCIAL"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_DISTRIBUTOR" ruleID="partner-portal_RULE_CA_DISTRIBUTOR">
+        <group groupName="CA_DISTRIBUTOR" groupID="partner-portal_CA_DISTRIBUTOR"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_HP_Proposal_Web" ruleID="partner-portal_RULE_HP_Proposal_Web">
+        <group groupName="HP_Proposal_Web" groupID="HP_Proposal_Web"/>
+        <expression>
+            <Not>
+                <And>
+                    <Equals attributeValue="Profiler NA 1493-4914 Attribute" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 1493-4917 Attribute" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 1493-5350 Attribute" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 1493-4916 Attribute" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 1493-4912 Attribute" attribute="Programs"/>
+                    <Equals attributeValue="Profiler NA 1493-4913 Attribute" attribute="Programs"/>
+                </And>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_PARTNER_TYPE_COM_ENTR_DISTR_GOVRN_SRVC" ruleID="partner-portal_RULE_PARTNER_TYPE_COM_ENTR_DISTR_GOVRN_SRVC">
+        <group groupName="PARTNER_TYPE_COM_ENTR_DISTR_GOVRN_SRVC" groupID="partner-portal_PARTNER_TYPE_COM_ENTR_DISTR_GOVRN_SRVC"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="Government" attribute="PartnerTypes"/>
+                <InGroup value="partner-portal_COMM_ENTER_SERVICE"/>
+                <InGroup value="partner-portal_PARTNER_TYPE_COMMERCIAL_DISTRIBUTOR"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_IPP" ruleID="partner-portal_RULE_US_IPP">
+        <group groupName="US_IPP" groupID="partner-portal_US_IPP"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="3-6JI9CB" attribute="Programs"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_IPP" ruleID="partner-portal_RULE_CA_IPP">
+        <group groupName="CA_IPP" groupID="partner-portal_CA_IPP"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="3-6JI9CB" attribute="Programs"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_COMMERCIAL_NOT_DISTRI" ruleID="partner-portal_RULE_COMMERCIAL_NOT_DISTRI">
+        <group groupName="COMMERCIAL_NOT_DISTRI" groupID="partner-portal_COMMERCIAL_NOT_DISTRI"/>
+        <expression>
+            <Equals attributeValue="Commercial" attribute="PartnerTypes"/>
+            <Not>
+                <Equals attributeValue="Distributor" attribute="PartnerTypes"/>
+            </Not>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CA_CONSUMER" ruleID="partner-portal_RULE_CA_CONSUMER">
+        <group groupName="CA_CONSUMER" groupID="partner-portal_CA_CONSUMER"/>
+        <expression>
+            <And>
+                <Equals attributeValue="CA" attribute="CountryCode"/>
+                <Equals attributeValue="Consumer" attribute="PartnerTypes"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_JBP_Assign_User_Access_PPA_NA" ruleID="partner-portal_RULE_G_HP_JBP_Assign_User_Access_PPA_NA">
+        <group groupName="G_HP_JBP_Assign_User_Access_PPA_NA" groupID="partner-portal_G_HP_JBP_Assign_User_Access_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_Joint_Business_Planning" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Equals attributeValue="G_SPT_Joint_Business_Planning_User" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_Block_Joint_Business_Planning" attribute="Programs"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_JBP_Access_Now_NonPPA_NA" ruleID="partner-portal_RULE_G_HP_JBP_Access_Now_NonPPA_NA">
+        <group groupName="G_HP_JBP_Access_Now_NonPPA_NA" groupID="partner-portal_G_HP_JBP_Access_Now_NonPPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_Joint_Business_Planning" attribute="Programs"/>
+                <Equals attributeValue="G_SPT_Joint_Business_planning_User" attribute="UserRights"/>
+                <Not>
+                    <Or>
+                        <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                        <Equals attributeValue="G_SPT_Block_Joint_Business_Planning" attribute="Programs"/>
+                    </Or>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Complete_Admin_Training_NonPPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Complete_Admin_Training_NonPPA_NA">
+        <group groupName="G_HP_New_P1_Leads_Complete_Admin_Training_NonPPA_NA" groupID="partner-portal_G_HP_New_P1_Leads_Complete_Admin_Training_NonPPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                </Not>
+                <Not>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin_Training" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_Leads_Complete_Admin_Training_PPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_Leads_Complete_Admin_Training_PPA_NA">
+        <group groupName="G_HP_New_P1_Leads_Complete_Admin_Training_PPA_NA" groupID="partner-portal_G_HP_New_P1_Leads_Complete_Admin_Training_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin_Training" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_My_Leads_Access_Comp_Admin_NonPPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_My_Leads_Access_Comp_Admin_NonPPA_NA">
+        <group groupName="G_HP_New_P1_My_Leads_Access_Comp_Admin_NonPPA_NA" groupID="partner-portal_G_HP_New_P1_My_Leads_Access_Comp_Admin_NonPPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin_Training" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_My_Leads_Access_Comp_Admin_PPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_My_Leads_Access_Comp_Admin_PPA_NA">
+        <group groupName="G_HP_New_P1_My_Leads_Access_Comp_Admin_PPA_NA" groupID="partner-portal_G_HP_New_P1_My_Leads_Access_Comp_Admin_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin_Training" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_JBP_Assign_Access_PPA_NA" ruleID="partner-portal_RULE_G_HP_JBP_Assign_Access_PPA_NA">
+        <group groupName="G_HP_JBP_Assign_Access_PPA_NA" groupID="partner-portal_G_HP_JBP_Assign_Access_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_Joint_Business_Planning" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Not>
+                    <Or>
+                        <Equals attributeValue="G_SPT_Block_Joint_Business_Planning" attribute="Programs"/>
+                        <Equals attributeValue="G_SPT_Joint_Business_Planning_User" attribute="UserRights"/>
+                    </Or>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_G_HP_New_P1_My_Leads_Access_PPA_NA" ruleID="partner-portal_RULE_G_HP_New_P1_My_Leads_Access_PPA_NA">
+        <group groupName="G_HP_New_P1_My_Leads_Access_PPA_NA" groupID="partner-portal_G_HP_New_P1_My_Leads_Access_PPA_NA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="G_SPT_PCLM_Enrolled" attribute="Programs"/>
+                <Equals attributeValue="HP Partner Portal Admin - NA" attribute="ResponsibilityNames"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User" attribute="UserRights"/>
+                <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_User_Training" attribute="UserRights"/>
+                <Not>
+                    <Equals attributeValue="G_SPT_My_HP_Leads_and_Opportunities_Tool_Admin" attribute="UserRights"/>
+                </Not>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_INVENTORY_PROG" ruleID="partner-portal_RULE_INVENTORY_PROG">
+        <group groupName="INVENTORY_PROG" groupID="partner-portal_INVENTORY_PROG"/>
+        <expression>
+            <Equals attributeValue="INVENTORY_PROG" attribute="UserRights"/>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_INVENTORY_VELOCITY" ruleID="partner-portal_RULE_INVENTORY_VELOCITY">
+        <group groupName="INVENTORY_VELOCITY" groupID="partner-portal_INVENTORY_VELOCITY"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="3-2S1-4233" attribute="PartnerProId"/>
+                <Equals attributeValue="3-2RR-3350" attribute="PartnerProId"/>
+                <Equals attributeValue="3-2SB-2914" attribute="PartnerProId"/>
+                <Equals attributeValue="3-494W-2" attribute="PartnerProId"/>
+                <Equals attributeValue="3-2S1-4232" attribute="PartnerProId"/>
+                <Equals attributeValue="3-4GESWM" attribute="PartnerProId"/>
+            </Or>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_US_VPA" ruleID="partner-portal_RULE_US_VPA">
+        <group groupName="US_VPA" groupID="partner-portal_US_VPA"/>
+        <expression>
+            <And>
+                <Equals attributeValue="US" attribute="CountryCode"/>
+                <Equals attributeValue="Profiler NA 5174" attribute="Programs"/>
+            </And>
+        </expression>
+    </rules>
+    <rules ruleName="RULE_CANADA_GOVERN" ruleID="partner-portal_RULE_CANADA_GOVERN">
+        <group groupName="CANADA_GOVERN" groupID="partner-portal_CANADA_GOVERN"/>
+        <expression>
+            <Or>
+                <Equals attributeValue="GOV1_CA_L1" attribute="Programs"/>
+                <Equals attributeValue="GOV1_CA_L2" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L1" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L2" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L3" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L4" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L5" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L6" attribute="Programs"/>
+                <Equals attributeValue="GOV2_CA_L7" attribute="Programs"/>
+            </Or>
+        </expression>
+    </rules>
+</Site>
+
