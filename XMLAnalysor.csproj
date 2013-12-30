@@ -45,6 +45,8 @@
     <Compile Include="Analysor\AnalysorType.cs" />
     <Compile Include="Analysor\GetEquals.cs" />
     <Compile Include="Analysor\IAnalysor.cs" />
+    <Compile Include="Analysor\RemoveAndEquals.cs" />
+    <Compile Include="Analysor\RemoveEquals.cs" />
     <Compile Include="Deserialize.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Program.cs" />

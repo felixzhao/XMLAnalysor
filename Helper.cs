@@ -12,5 +12,10 @@ namespace XMLAnalysor
         {
             System.IO.File.WriteAllLines(outpath, lines);
         }
+
+        public static void outputString2file(string outpath, string xmlString)
+        {
+            System.IO.File.WriteAllText(outpath, xmlString);
+        }
     }
 }

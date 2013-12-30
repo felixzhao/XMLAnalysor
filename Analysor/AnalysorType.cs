@@ -10,5 +10,7 @@ namespace XMLAnalysor
     {
         Equals,
         And_Equals,
+        Remove_Equals,
+        Remove_And_Equals,
     }
 }

@@ -25,7 +25,18 @@ namespace XMLAnalysor
 
             XMLAnalysorFactory factory = new XMLAnalysorFactory();
             factory.PathList = pathlist;
-            factory.Factory(AnalysorType.And_Equals);
+            factory.Factory(AnalysorType.Remove_Equals);
+
+            var pathlist2 = new List<string>
+            {
+                "Removed_Equals_LAR_UGS",
+                "Removed_Equals_APJ_User_groups",
+                "Removed_Equals_AMS_UGS",
+                "Removed_Equals_EMEA_UGS",
+            };
+
+            factory.PathList = pathlist2;
+            factory.Factory(AnalysorType.Remove_And_Equals);
 
             Console.WriteLine("... ...");
             Console.ReadKey();

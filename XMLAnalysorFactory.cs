@@ -29,13 +29,19 @@ namespace XMLAnalysor
                 case AnalysorType.And_Equals:
                     analysor = new Analysis_AND_Equals();
                     break;
+                case AnalysorType.Remove_Equals:
+                    analysor = new RemoveEquals();
+                    break;
+                case AnalysorType.Remove_And_Equals:
+                    analysor = new RemoveAndEquals();
+                    break;
                 default:
                     break;
             }
 
             foreach (var path in _pathList)
             {
-                analysor.Generate2File(path);
+                    analysor.Generate2File(path);
             }
 
         }
