@@ -1,15 +1,34 @@
+import sys
+import re
 
-inpath = '1.csv'
-outpath = 'out.csv'
+infile = sys.argv[1]
+inpath = 'Jan3/' + infile + '.csv'
+outpath = 'out/out_' + infile + '.csv'
 
 lines = open(inpath,'r').readlines()
 fout = open(outpath,'w')
 
 terms = []
 
-for l in lines:
-  cels = l.split(',')
-  exp_list = cels[4].split('&')
+def RemoveStopword(str):
+  result = str
+  stop_word = [';', ':', '[', ']', '(', ')', 'Not']
+  for w in stop_word:
+    result = result.replace(w,' ')
+  return result
+
+def SplitExpression(exp):
+  return re.split('& | Or', exp)
+
+title = lines[0][:-1]
+
+out_list = []
+  
+for l in xrange(1,len(lines)):
+  line = lines[l]
+  cels = line.split(',')
+  ful_exp = cels[4]
+  exp_list = SplitExpression(RemoveStopword(ful_exp))
   tuples = dict()
   for exp in exp_list:
     tup = exp.split('=')
@@ -20,18 +39,23 @@ for l in lines:
       tuples[tup[0]] = tup[1]
     else:
       tuples[tup[0]] += ' ; ' + str(tup[1])
-  out_str = l[:-1] + ' , '
+  out_str = line[:-1] + ' , '
   for t in terms:
     if t in tuples:
       out_str +=  str(tuples[t])
     out_str += ' , '
-#  out_str += ' \n'
+  out_list.append(out_str)
   print out_str
-  print >> fout, out_str
+#  print >> fout, out_str
 
-title = 'ruleID,ruleName, groupID, groupName,expression,New Audiencing Rules,'  
+## print out title
 for t in terms:
-  title += t + ' , '
+  title += ' , ' + t
+print title
 print >> fout, title
+
+## print out records
+for r in out_list:
+  print >> fout, r
   
 fout.close()  
